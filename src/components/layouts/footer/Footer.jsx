@@ -1,13 +1,21 @@
+import { Box, Typography } from "@mui/material";
 import "./footer.css";
 export const Footer = () => {
-  const sumar = () => {
-    console.log(2 + 2);
-  };
-
   return (
-    <div>
-      <button onClick={sumar}>Sumar</button>
-      <h2 className="footer-text">Este es mi footer</h2>
-    </div>
+    <Box
+      sx={{
+        bgcolor: "primary.main",
+        color: "white",
+        py: 2,
+        textAlign: "center",
+        backgroundColor: "green",
+        mt: "auto",
+      }}
+      
+    >
+      <Typography variant="body1">
+        © 2025 Este es mi footer.
+      </Typography>
+    </Box>
   );
 };

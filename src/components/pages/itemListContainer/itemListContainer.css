@@ -1,0 +1,10 @@
+.itemlist-background {
+  background-color: #212020;
+  overflow-y: auto;
+  max-height: 100vh;
+  padding: 16px;
+}
+
+.title{
+  color: #fff;
+}
