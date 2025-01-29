@@ -2,7 +2,7 @@ import "./navbar.css";
 
 //import logo from "../../../assets/image-logo.png";
 //import { CartWidget } from "../../common/cartWidget/CartWidget";
-import { Button, Container, CssBaseline } from "@mui/material";
+import { Button } from "@mui/material";
 import Box from "@mui/material/Box";
 import Drawer from "@mui/material/Drawer";
 import List from "@mui/material/List";
@@ -17,6 +17,7 @@ import ComputerIcon from "@mui/icons-material/Computer";
 import KeyboardIcon from "@mui/icons-material/Keyboard";
 import DeveloperBoardIcon from "@mui/icons-material/DeveloperBoard";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
+import { Link } from "react-router-dom";
 
 export const Navbar = () => {
   const [open, setOpen] = useState(false);
@@ -28,69 +29,83 @@ export const Navbar = () => {
   const DrawerList = (
     <Box sx={{ width: 250 }} role="presentation" onClick={toggleDrawer(false)}>
       <List>
-        <ListItem key={"Todas"} disablePadding>
-          <ListItemButton>
-            <ListItemIcon>
-              <HomeIcon />
-            </ListItemIcon>
-            <ListItemText primary={"Todas"} />
-          </ListItemButton>
-        </ListItem>
-        <ListItem key={"Computadoras"} disablePadding>
-          <ListItemButton>
-            <ListItemIcon>
-              <ComputerIcon />
-            </ListItemIcon>
-            <ListItemText primary={"Computadoras"} />
-          </ListItemButton>
-        </ListItem>
-        <ListItem key={"Perifericos"} disablePadding>
-          <ListItemButton>
-            <ListItemIcon>
-              <KeyboardIcon />
-            </ListItemIcon>
-            <ListItemText primary={"Perifericos"} />
-          </ListItemButton>
-        </ListItem>
-        <ListItem key={"Componentes"} disablePadding>
-          <ListItemButton>
-            <ListItemIcon>
-              <DeveloperBoardIcon />
-            </ListItemIcon>
-            <ListItemText primary={"Componentes"} />
-          </ListItemButton>
-        </ListItem>
-        <ListItem key={"Carrito"} disablePadding>
-          <ListItemButton>
-            <ListItemIcon>
-              <ShoppingCartIcon />
-            </ListItemIcon>
-            <ListItemText primary={"Carrito"} />
-          </ListItemButton>
-        </ListItem>
-        <ListItem disablePadding>
-          <CssBaseline />
-          <Container maxWidth="sm">
-            <img
-              src="https://res.cloudinary.com/deigdy0bj/image/upload/v1736913412/Logo-Image_l5r2ls.webp"
-              alt=""
-              style={{ maxHeight: 40, marginTop: "20px" }}
-            />
-          </Container>
-        </ListItem>
+        <Link to={"/"}>
+          <ListItem key={"Todas"} disablePadding>
+            <ListItemButton>
+              <ListItemIcon>
+                <HomeIcon />
+              </ListItemIcon>
+              <ListItemText primary={"Todas"} />
+            </ListItemButton>
+          </ListItem>
+        </Link>
+        <Link to={"/category/computadoras"}>
+          <ListItem key={"Computadoras"} disablePadding>
+            <ListItemButton>
+              <ListItemIcon>
+                <ComputerIcon />
+              </ListItemIcon>
+              <ListItemText primary={"Computadoras"} />
+            </ListItemButton>
+          </ListItem>
+        </Link>
+        <Link to={"/category/perifericos"}>
+          <ListItem key={"Perifericos"} disablePadding>
+            <ListItemButton>
+              <ListItemIcon>
+                <KeyboardIcon />
+              </ListItemIcon>
+              <ListItemText primary={"Perifericos"} />
+            </ListItemButton>
+          </ListItem>
+        </Link>
+        <Link to={"/category/componentes"}>
+          <ListItem key={"Componentes"} disablePadding>
+            <ListItemButton>
+              <ListItemIcon>
+                <DeveloperBoardIcon />
+              </ListItemIcon>
+              <ListItemText primary={"Componentes"} />
+            </ListItemButton>
+          </ListItem>
+        </Link>
+        <Link to={"/cart"}>
+          <ListItem key={"Carrito"} disablePadding>
+            <ListItemButton>
+              <ListItemIcon>
+                <ShoppingCartIcon />
+              </ListItemIcon>
+              <ListItemText primary={"Carrito"} />
+            </ListItemButton>
+          </ListItem>
+        </Link>
       </List>
     </Box>
   );
 
   return (
     <>
-      <Box sx={{ backgroundColor: "green" }}>
+      <Box
+        sx={{
+          backgroundColor: "green",
+          display: "flex",
+          alignItems: "center",
+          padding: "5px",
+        }}
+      >
         <Button onClick={toggleDrawer(true)}>
           <MenuIcon sx={{ fontSize: 40, color: "white" }} />
         </Button>
         <Drawer open={open} onClose={toggleDrawer(false)}>
           {DrawerList}
         </Drawer>
+        <Link to={"/"}>
+          <img
+            src="https://res.cloudinary.com/deigdy0bj/image/upload/v1736913412/Logo-Image_l5r2ls.webp"
+            alt=""
+            style={{ maxHeight: 30, marginLeft: "10px" }}
+          />
+        </Link>
       </Box>
     </>
   );

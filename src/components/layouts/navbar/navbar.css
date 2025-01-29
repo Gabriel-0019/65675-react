@@ -1,4 +1,8 @@
 .navbar-container {
-    background-color: green;
-  }
-  
+  background-color: green;
+}
+
+a {
+  text-decoration: none;
+  color: #000
+}

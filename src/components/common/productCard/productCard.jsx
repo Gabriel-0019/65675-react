@@ -4,8 +4,9 @@ import CardActions from "@mui/material/CardActions";
 import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
+import { Link } from "react-router-dom";
 
-export const ProductCard = ({ imageUrl, title, price, description }) => {
+export const ProductCard = ({ imageUrl, title, price, description, id }) => {
   return (
     <>
       <Card
@@ -35,20 +36,13 @@ export const ProductCard = ({ imageUrl, title, price, description }) => {
           </Typography>
         </CardContent>
         <CardActions>
-          <Button size="small" color="success" variant="contained">
-            Ver detalle
-          </Button>
+          <Link to={`/detail/${id}`}>
+            <Button size="small" color="success" variant="contained">
+              Ver detalle
+            </Button>
+          </Link>
         </CardActions>
       </Card>
-      {/* <Box border="1px solid black">
-      <img src={imageUrl} alt=""></img>
-      <h2>{title}</h2>
-      <h2>{price}</h2>
-      <h2>{description} </h2>
-      <Button color="success" variant="contained" loading={true}>
-        Ver detalle
-      </Button>
-    </Box> */}
     </>
   );
 };

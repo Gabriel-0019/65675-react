@@ -4,18 +4,27 @@ import { ProductCard } from "../../common/productCard/productCard";
 import { useEffect } from "react";
 import { Container, CssBaseline, Grid2 } from "@mui/material";
 import "./itemListContainer.css";
+import { useParams } from "react-router-dom";
 
 const ItemListContainer = (props) => {
   //simular una peticion que me devuelva productos
   const [items, setItems] = useState([]);
+  const { name } = useParams();
 
   useEffect(() => {
-    console.log("Soy el effect");
+    let productsFiltered;
+
+    if (name) {
+      productsFiltered = products.filter(
+        (element) => element.category === name
+      );
+    }
+    
     const getProducts = new Promise((resolve, reject) => {
       const isLogged = true;
 
       if (isLogged) {
-        resolve(products);
+        resolve(!name ? products : productsFiltered);
       } else {
         reject({ statusCode: 400, message: "algo salio todo mal" });
       }
@@ -30,9 +39,7 @@ const ItemListContainer = (props) => {
         console.log(error);
       })
       .finally(() => {});
-  }, []);
-
-  console.log("no soy el effect");
+  }, [name]);
 
   return (
     <div>
@@ -50,7 +57,6 @@ const ItemListContainer = (props) => {
         </Grid2>
       </Container>
     </div>
-
   );
 };
 
