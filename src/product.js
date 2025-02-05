@@ -14,7 +14,7 @@ export let products = [
                     //\nBluetooth 5.4`,
         imageUrl:
           "https://res.cloudinary.com/deigdy0bj/image/upload/v1736905155/msi-mag-z790-carbon-wifi-ii_oogg0h.jpg",
-        stock: 12,
+        stock: 3,
         category: "componentes",
     },
     {
@@ -31,7 +31,7 @@ export let products = [
                     //\nSistema Operativo: Windows 11`,
         imageUrl:
           "https://res.cloudinary.com/deigdy0bj/image/upload/v1736904931/lenovo-ideapad-slim-3-i3-n305-8-gb-ssd_j4c0vd.jpg",
-        stock: 12,
+        stock: 5,
         category: "computadoras",
     },
     {
@@ -41,7 +41,7 @@ export let products = [
         description: `Logitech | Teclado Mecánico | RGB Lightsync | Switch GX Optical Tactile | Nuevo`,
         imageUrl:
           "https://res.cloudinary.com/deigdy0bj/image/upload/v1736904504/logitech-pro-x-60-lightspeed-gx-optical-tactile-blanco_lscpna.jpg",
-        stock: 12,
+        stock: 7,
         category: "perifericos",
     },
     {
@@ -51,7 +51,7 @@ export let products = [
         description: `Producto Nuevo | DDR5 6000 | 32GB | CAS 38 | 1.35V | LED RGB`,
         imageUrl:
           "https://res.cloudinary.com/deigdy0bj/image/upload/v1736904393/teamgroup-t-force-delta-rgb-32gb-ddr5-6000-blanco_xuxhjy.jpg",
-        stock: 12,
+        stock: 10,
         category: "componentes",
     },
 ]

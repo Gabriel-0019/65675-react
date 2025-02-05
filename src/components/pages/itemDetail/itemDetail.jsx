@@ -11,6 +11,7 @@ import {
 } from "@mui/material";
 import SentimentVeryDissatisfiedOutlinedIcon from "@mui/icons-material/SentimentVeryDissatisfiedOutlined";
 import "./itemDetail.css";
+import { Counter } from "../../common/counter/Counter";
 
 const style = {
   position: "absolute",
@@ -52,6 +53,7 @@ const ItemDetail = () => {
             <h5>Stock: {item.stock}</h5>
           </Grid2>
         </Grid2>
+        <Counter item={item}/>
       </Container>
       <Modal
         open={open}

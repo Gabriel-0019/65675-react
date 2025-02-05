@@ -10,7 +10,7 @@ import ListItem from "@mui/material/ListItem";
 import ListItemButton from "@mui/material/ListItemButton";
 import ListItemIcon from "@mui/material/ListItemIcon";
 import ListItemText from "@mui/material/ListItemText";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import MenuIcon from "@mui/icons-material/Menu";
 import HomeIcon from "@mui/icons-material/Home";
 import ComputerIcon from "@mui/icons-material/Computer";
@@ -18,10 +18,13 @@ import KeyboardIcon from "@mui/icons-material/Keyboard";
 import DeveloperBoardIcon from "@mui/icons-material/DeveloperBoard";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import { Link } from "react-router-dom";
+import { CartContext } from "../../../context/CartContext";
+import Badge from "@mui/material/Badge";
 
 export const Navbar = () => {
   const [open, setOpen] = useState(false);
-
+  const { getTotalItems } = useContext(CartContext);
+  let total = getTotalItems();
   const toggleDrawer = (newOpen) => () => {
     setOpen(newOpen);
   };
@@ -73,7 +76,9 @@ export const Navbar = () => {
           <ListItem key={"Carrito"} disablePadding>
             <ListItemButton>
               <ListItemIcon>
-                <ShoppingCartIcon />
+                <Badge badgeContent={total} color="primary">
+                  <ShoppingCartIcon />
+                </Badge>
               </ListItemIcon>
               <ListItemText primary={"Carrito"} />
             </ListItemButton>

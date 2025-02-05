@@ -1,35 +1,38 @@
-import { useState, useEffect } from "react";
+import { useContext, useState } from "react";
 import "./counter.css";
+import { CartContext } from "../../../context/CartContext";
+import { Button, ButtonGroup } from "@mui/material";
 
-export const Counter = () => {
+export const Counter = ({ item }) => {
   const [contador, setContador] = useState(1); // --> []
-  const [isDark, setIsDark] = useState(false);
-
+  const { addToCart } = useContext(CartContext);
   const sumar = () => {
-    setContador(contador + 1);
+    if (contador < item.stock) {
+      setContador(contador + 1);
+    }
   };
 
   const restar = () => {
-    setContador(contador - 1);
+    if (contador > 1) {
+      setContador(contador - 1);
+    }
   };
 
-  const cambiarModo = () => {
-    setIsDark(!isDark);
+  const onAdd = () => {
+    let objCarrito = { ...item, quantity: contador };
+    //logica para agregar carrito
+    addToCart(objCarrito);
   };
-
-  console.log("Se hace una petición a un servidor de la india FEURA DEL EFFECT")
-
-
-  useEffect(() => {
-    console.log("Se hace una petición a un servidor de la india")
-  }, [isDark])// array de dependencias
 
   return (
-    <div className={isDark ? "dark" : "normal"}>
-      <button onClick={restar}>Restar</button>
-      <h2>contador: {contador} </h2>
-      <button onClick={sumar}>Sumar</button>
-      <button onClick={cambiarModo}>cambiar</button>
+    <div>
+      <ButtonGroup variant="contained" aria-label="Group button counter">
+        <Button onClick={restar} color="success">-</Button>
+        <h2 style={{ marginLeft: "20px", marginRight: "20px" }}>{contador} </h2>
+        <Button onClick={sumar} color="success">+</Button>
+      </ButtonGroup>
+      <br/>
+      <Button style={{ marginTop: "10px"}} color="success" onClick={onAdd} variant="contained">Agregar al carrito</Button>
     </div>
   );
 };

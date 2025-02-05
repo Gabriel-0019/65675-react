@@ -7,6 +7,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Cart from "./components/pages/cart/Cart";
 import Checkout from "./components/pages/checkout/Checkout";
 import Error404 from "./components/pages/Error404/Error404";
+import { CartContextProvider } from "./context/CartContext";
 
 function App() {
   return (
@@ -19,24 +20,28 @@ function App() {
       }}
     >
       <BrowserRouter>
-        <Navbar />
-        <Routes>
-          <Route
-            path="/"
-            element={<ItemListContainer tituloPrincipal="Productos" />}
-          />
-          <Route
-            path="/category/:name"
-            element={<ItemListContainer tituloPrincipal="Productos filtrados" />}
-          />
+        <CartContextProvider>
+          <Navbar />
+          <Routes>
+            <Route
+              path="/"
+              element={<ItemListContainer tituloPrincipal="Productos" />}
+            />
+            <Route
+              path="/category/:name"
+              element={
+                <ItemListContainer tituloPrincipal="Productos filtrados" />
+              }
+            />
 
-          <Route path="/cart" element={<Cart />} />
-          <Route path="/checkout" element={<Checkout />} />
-          <Route path="/detail/:id" element={<ItemDetail />} />
+            <Route path="/cart" element={<Cart />} />
+            <Route path="/checkout" element={<Checkout />} />
+            <Route path="/detail/:id" element={<ItemDetail />} />
 
-          <Route path="*" element={<Error404 />} />
-        </Routes>
-        <Footer />
+            <Route path="*" element={<Error404 />} />
+          </Routes>
+          <Footer />
+        </CartContextProvider>
       </BrowserRouter>
     </div>
   );
