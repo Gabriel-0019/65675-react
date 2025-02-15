@@ -62,11 +62,16 @@ const Cart = () => {
           >
             Limpiar carrito
           </Button>
-          <Link to={"/checkout"} style={{ color: "#fff", marginLeft: "10px" }}>
-            <Button size="small" color="success" variant="contained">
-              Finalizar compra
-            </Button>
-          </Link>
+          {cart.length > 0 && (
+            <Link
+              to={"/checkout"}
+              style={{ color: "#fff", marginLeft: "10px" }}
+            >
+              <Button size="small" color="success" variant="contained">
+                Finalizar compra
+              </Button>
+            </Link>
+          )}
         </ButtonGroup>
       </Container>
     </div>

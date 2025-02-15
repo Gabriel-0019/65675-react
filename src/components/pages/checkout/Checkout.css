@@ -1,8 +1,12 @@
-.text-field{
-    background-color: #fff;
-    border-radius: 5px;
+.text-field {
+  background-color: #fff;
+  border-radius: 5px;
 }
 
-.div-main{
-    margin-top: 20px
+.div-main {
+  margin-top: 20px;
+}
+
+h1 {
+  color: #fff;
 }
