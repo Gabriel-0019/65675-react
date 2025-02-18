@@ -2,12 +2,12 @@ import { initializeApp } from "firebase/app";
 import { getFirestore } from "firebase/firestore";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyC5pmBOmDLHaxJM6Kgpu2I0Rj6lSrNiuDU",
-  authDomain: "comision-65675-ecomerce.firebaseapp.com",
-  projectId: "comision-65675-ecomerce",
-  storageBucket: "comision-65675-ecomerce.firebasestorage.app",
-  messagingSenderId: "76926231263",
-  appId: "1:76926231263:web:3f8896abaf821fa1dd7f6a"
+  apiKey: import.meta.env.VITE_APIKEY,
+  authDomain: import.meta.env.VITE_AUTH,
+  projectId: import.meta.env.VITE_PROJECT,
+  storageBucket: import.meta.env.VITE_STORAGE,
+  messagingSenderId: import.meta.env.VITE_MESSAGING,
+  appId: import.meta.env.VITE_APPID,
 };
 
 const app = initializeApp(firebaseConfig);
