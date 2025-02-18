@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 //import { products } from "../../../product";
-import { useParams } from "react-router-dom";
+import { useParams } from "react-router";
 import {
   Box,
   Button,
@@ -15,7 +15,7 @@ import "./itemDetail.css";
 import { Counter } from "../../common/counter/Counter";
 import { db } from "../../../firebaseConfig";
 import { collection, doc, getDoc } from "firebase/firestore";
-import { useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router";
 import { Loading } from "../../common/loading/Loading";
 
 const style = {

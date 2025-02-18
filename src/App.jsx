@@ -3,7 +3,7 @@ import { Footer } from "./components/layouts/footer/Footer";
 import { Navbar } from "./components/layouts/navbar/Navbar";
 import ItemDetail from "./components/pages/itemDetail/itemDetail";
 //import { Country } from "./components/common/Country/Country";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router";
 import Cart from "./components/pages/cart/Cart";
 import Checkout from "./components/pages/checkout/Checkout";
 import Error404 from "./components/pages/Error404/Error404";

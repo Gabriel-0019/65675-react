@@ -17,7 +17,7 @@ import ComputerIcon from "@mui/icons-material/Computer";
 import KeyboardIcon from "@mui/icons-material/Keyboard";
 import DeveloperBoardIcon from "@mui/icons-material/DeveloperBoard";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
-import { Link } from "react-router-dom";
+import { Link } from "react-router";
 import { CartContext } from "../../../context/CartContext";
 import Badge from "@mui/material/Badge";
 

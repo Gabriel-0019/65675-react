@@ -4,7 +4,7 @@ import { ProductCard } from "../../common/productCard/productCard";
 import { useEffect } from "react";
 import { Container, CssBaseline, Grid2 } from "@mui/material";
 import "./itemListContainer.css";
-import { useParams } from "react-router-dom";
+import { useParams } from "react-router";
 import { db } from "../../../firebaseConfig";
 import { collection, getDocs, query, where } from "firebase/firestore";
 import { Loading } from "../../common/loading/Loading";
