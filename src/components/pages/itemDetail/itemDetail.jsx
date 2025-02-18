@@ -40,7 +40,6 @@ const ItemDetail = () => {
     let productsCollection = collection(db, "products");
     let productRef = doc(productsCollection, id);
     const getProduct = getDoc(productRef);
-    console.log(getProduct);
     getProduct
       .then((res) => {
         if (res.data() === undefined) {
@@ -58,7 +57,6 @@ const ItemDetail = () => {
       <Container fixed>
         {Object.keys(item).length !== 0 ? (
           <>
-            {console.log(item)}
             <Grid2 container spacing={4}>
               <Grid2 xs={6} sm={6} md={4}>
                 <img src={item.imageUrl} alt="" style={{ maxWidth: "300px" }} />
