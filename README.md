@@ -1,8 +1,15 @@
-# React + Vite
+# Tecnologías y librerías utilizadas
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+- REACT
+- Vite
+- Material UI
+- Firebase
+- React Router
 
-Currently, two official plugins are available:
+```
+npm run dev
+```
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+[App Link](https://65675-react.vercel.app/)
+
+<img src="https://res.cloudinary.com/deigdy0bj/image/upload/v1739922344/GitHubLogo_gs1fqa.webp" width="200">
